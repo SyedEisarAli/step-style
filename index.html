@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepStyle - Premium Footwear</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles to fix the layout */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: #666;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .shoe-animation {
+            width: 450px;
+            height: 350px;
+            background: linear-gradient(45deg, #ff6b6b, #667eea);
+            border-radius: 30px;
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.3);
+        }
+
+        .shoe-animation::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 100px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: inset 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .shoe-animation::after {
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 20px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            filter: blur(10px);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-20px) rotate(1deg);
+            }
+            66% {
+                transform: translateY(-10px) rotate(-1deg);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1 {
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-content .btn {
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+            }
+
+            .hero-content {
+                padding: 0 20px;
+                margin-bottom: 50px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .shoe-animation {
+                width: 300px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>StepStyle</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Categories</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="sport.html">Sport</a></li>
+                    </ul>
+                </li>
+                <li><a href="sale.html">Sale</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Step Into Style</h1>
+            <p>Discover the perfect pair for every occasion. From casual to formal, we have shoes that match your personality and lifestyle.</p>
+            <a href="men.html" class="btn">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <div class="shoe-animation"></div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2>Shop By Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <a href="men.html">
+                        <div class="category-image men"></div>
+                        <h3>Men's Collection</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="women.html">
+                        <div class="category-image women"></div>
+                        <h3>Women's Collection</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="kids.html">
+                        <div class="category-image kids"></div>
+                        <h3>Kids' Collection</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="sport.html">
+                        <div class="category-image sport"></div>
+                        <h3>Sport Collection</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 StepStyle. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
